@@ -140,5 +140,17 @@ function vocalAnalicer($charVocal)
 }
 
 #suma array de números 
+$conditionValidation = !empty($_POST["arrNum1"]) && !empty($_POST["arrNum2"]) &&
+    !empty($_POST["arrNum3"]) && !empty($_POST["arrNum4"]) && !empty($_POST["arrNum5"]) && !empty($_POST["arrNum6"]);
+if ($conditionValidation) {
+    $array1 = array($_POST["arrNum1"], $_POST["arrNum2"], $_POST["arrNum3"]);
+    $array2 = array($_POST["arrNum4"], $_POST["arrNum5"], $_POST["arrNum6"]);
+    sumArr($array1, $array2);
+}
 
+function sumArr($a, $b)
+{
+    $sumArray = $a[0] + $a[1] + $a[2] + $b[0] + $b[1] + $b[2];
+    echo "el resultado es $sumArray";
+}
 ?>
